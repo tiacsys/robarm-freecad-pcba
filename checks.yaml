@@ -1,0 +1,16 @@
+# What `curatrix check robarm-freecad-pcba` runs (format: xdmod/curatrix/README.md, "checks.yaml").
+# The board library (XD-ADR-0139): FreeCAD models of tagged board versions of robarm-ee, written by
+# `curatrix cam robarm-ee <board> --library`, read by robarm-me. This repo owns no IDs: the files
+# carry the EE-PCBA IDs of robarm-ee, so it has no ids section and no ledger.
+version: 1
+area: robarm-freecad-pcba
+
+docs:                                   # CK-A6 strict docs build (board-library)
+  registry: docs/documents.yaml
+
+# CK-H6: exactly the checks this repo runs (built-in and commands). A section that goes
+# missing turns an expected check off, and CK-H6 fails.
+expect: [
+  CK-A1, CK-A3, CK-A6, CK-B1, CK-B2, CK-B3, CK-B5, CK-B6, CK-G1, CK-G2, CK-H1, CK-H2, CK-H3,
+  CK-H4, CK-H6, CK-H7
+]

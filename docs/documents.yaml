@@ -1,0 +1,16 @@
+# zdocs registry of robarm-freecad-pcba (doc-architecture.md §3).
+# One document: the list of board versions in this library. It has no needs and no upstream.
+# Format: tools/zdocs/doc/manual/reference/registry-schema.rst.
+base_url: "https://tiacsys.github.io/robarm-manifest/"
+
+groups:
+  - id: g-lib
+    title: "Board library"
+
+documents:
+  board-library:
+    title: "Board Library"
+    group: g-lib
+    version_project: robarm-freecad-pcba
+    builders: [html]
+    needs: {source: json}

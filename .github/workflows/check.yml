@@ -1,0 +1,20 @@
+# PR check of robarm-freecad-pcba: a thin caller of xdmod's reusable workflow (xdmod/workflows/check.yml).
+# It runs `curatrix check robarm-freecad-pcba --stage pr --no-cad` in a workspace built from the
+# manifest's main branch, with sibling repos resolved as described in D127. The role is `ee`: the
+# library check reads the board tags of robarm-ee (XD-ADR-0139).
+name: check
+permissions:
+  contents: read
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check:
+    uses: tiacsys/xdmod/.github/workflows/curatrix-check.yml@main
+    with:
+      manifest: tiacsys/robarm-manifest
+      repo: robarm-freecad-pcba
+      role: ee
