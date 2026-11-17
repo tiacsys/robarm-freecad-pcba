@@ -1,6 +1,6 @@
 # FreeCAD backup files
 *.FCBak
 *.FCStd1
-# STEP files are intermediate (build/<area>/cam/...); only the FreeCAD models are committed
+# STEP files are intermediate (build/<area>/board-model/...); only the FreeCAD models are committed
 *.step
 *.stp
