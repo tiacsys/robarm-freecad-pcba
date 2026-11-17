@@ -8,9 +8,13 @@ area: robarm-freecad-pcba
 docs:                                   # CK-A6 strict docs build (board-library)
   registry: docs/documents.yaml
 
+board_library:                          # CK-F20: every file names an existing board tag of robarm-ee,
+  source: "{ws}/robarm-ee"              # its EE-PCBA and the tag's commit; at most max_mb per file
+  max_mb: 5                             # XD-ADR-0139: 5 MB per file to start
+
 # CK-H6: exactly the checks this repo runs (built-in and commands). A section that goes
 # missing turns an expected check off, and CK-H6 fails.
 expect: [
-  CK-A1, CK-A3, CK-A6, CK-B1, CK-B2, CK-B3, CK-B5, CK-B6, CK-G1, CK-G2, CK-H1, CK-H2, CK-H3,
-  CK-H4, CK-H6, CK-H7
+  CK-A1, CK-A3, CK-A6, CK-B1, CK-B2, CK-B3, CK-B5, CK-B6, CK-F20, CK-G1, CK-G2, CK-H1, CK-H2,
+  CK-H3, CK-H4, CK-H6, CK-H7
 ]
